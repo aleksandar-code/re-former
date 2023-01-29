@@ -25,12 +25,12 @@
 
 <% end %>
 
-<%= form_with url: "/users", method: :post do |form| %>
-  <%= form.label :username, "Username:" %>
-  <%= form.text_field :username, placeholder: "Your name here" %>
-  <%= form.label :password, "Password:" %>
-  <%= form.password_field :password, placeholder: "Super secret and secure pass" %>
-  <%= form.label :email, "Email:" %>
-  <%= form.email_field :email, placeholder: "example@example.com" %>
-  <%= form.submit "Submit" %>
+<%= form_with model: @user do |form| %>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+    <%= form.label :email %>
+    <%= form.text_field :email, placeholder: 'sample@domain.com' %>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    <%= form.submit "Register!" %>
 <% end %>
